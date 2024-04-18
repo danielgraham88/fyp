@@ -1,0 +1,51 @@
+.home-content{
+  --ion-background-color:#CDCDCD !important
+  // --background: url('../../../assets/icon/image.png') no-repeat cover;
+}
+
+.ion-padding-card{
+  --ion-background-color:white!important
+}
+
+#container {
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#main-icon {
+  display: block; 
+  margin: 0 auto; 
+  font-size: 100px; 
+  color: rgb(17, 126, 252);
+  text-align: center; 
+}
+ 
+ #info-card {
+  font-size: 30px;
+  color: rgb(17, 126, 252);
+  text-align: center;
+ }
+ 

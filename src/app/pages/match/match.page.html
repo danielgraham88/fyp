@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+        Match
+    </ion-title>
+    <ion-progress-bar *ngIf="isLoading" type="indeterminate" color="danger"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="persistent-section" id="persistentSection">
+
+  <ion-refresher slot="fixed" (ionRefresh)="ngOnInit()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="icon-icons-container">
+    <ion-icon name="male-outline" class="large-animal-icon" ></ion-icon>
+    <ion-icon name="swap-horizontal-outline" class="large-icon" ></ion-icon>
+    <ion-icon name="female-outline" class="large-animal-icon" ></ion-icon>
+  </div>
+
+  <div class="selection-container">
+    <div class="selection-half">
+      <ion-label *ngIf="selectedAnimal" class="selection-label">
+        {{ selectedAnimal }}
+      </ion-label>
+    </div>
+    <div class="selection-half">
+      <ion-label *ngIf="selectedAnimal2" class="selection-label">
+        {{ selectedAnimal2 }}
+      </ion-label>
+    </div>
+  </div>
+
+  <div *ngIf="matchResult" class="star-rating">
+    <ion-icon name="star" *ngFor="let star of [].constructor(getStarRating().fullStars); let i=index" class="star-icon"></ion-icon>
+    
+    <ion-icon *ngIf="getStarRating().halfStars" name="star-half-outline" class="star-icon"></ion-icon>
+
+    <ion-icon name="star-outline" *ngFor="let star of [].constructor(getStarRating().emptyStars); let i=index" class="star-icon"></ion-icon>
+  </div>
+
+  <ion-button expand="block" [disabled]="!(selectedAnimal && selectedAnimal2)" (click)="match()">
+    Match
+  </ion-button>
+
+
+  <div class="change-button-container">
+    <ion-button color = "danger" *ngIf="selectedAnimal || selectedAnimal2" (click)="deselectAnimal()">
+      Change Male
+    </ion-button>
+  </div>
+
+  <!-- <ion-label class= "result-label" *ngIf="matchResult">
+    {{ matchResult }}
+  </ion-label> -->
+
+  
+  </div>
+</ion-content>
+
+<ion-content class="scrollable-list" id="scrollableList">
+
+  <ion-list *ngIf="!selectedAnimal">
+    <ng-container *ngFor="let animal of animalsInHerd; let i = index">
+      <ion-item (click)="selectAnimal(animal)" *ngIf="animal.sex === 'M'">
+        {{ animal.animal_number }} - {{animal.sex}}
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <ion-list *ngIf="selectedAnimal">
+    <ng-container *ngFor="let animal of animalsInHerd; let j = index">
+      <ion-item (click)="selectAnimal2(animal)"  *ngIf="animal.sex === 'F'">
+        {{ animal.animal_number }} - {{animal.sex}}
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+</ion-content>

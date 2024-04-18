@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <ion-card class="login-container">
+         <div class="image-container">
+            <img src="../../../assets/icon/icbf.webp" class="logo" alt="ICBF Pic" >
+        </div>
+      <ion-card-title class="title-card">Major Genes App</ion-card-title>
+      <ion-card-subtitle class="subtitle-card"> Welcome. Please sign in below</ion-card-subtitle>
+      <ion-list style= "padding: 0px">
+          <ion-item>
+              <ion-input placeholder="Enter Username"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-input placeholder="Enter Password" type="password"></ion-input>
+          </ion-item>
+      </ion-list>
+      <ion-button class="login-button" (click)="logForm()">
+          <ion-icon name="log-out-outline"></ion-icon> Login
+      </ion-button>
+  </ion-card>
+</ion-content>

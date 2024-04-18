@@ -1,3 +1,37 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="first-menu" contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title> Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Information</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content" (click)="moveScreen('information')"><ion-icon name="information-circle-outline"></ion-icon>Information</div>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header" color="light">
+            <ion-label>Input</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content" (click)="moveScreen('input')">Input</div>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header" color="light">
+            <ion-label>Match</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content" (click)="moveScreen('match')">Match</div>
+        </ion-accordion>
+      </ion-accordion-group>
+
+      <ion-button color="primary" (click)="moveScreen('home')" class="home-button"> <ion-icon name="home-outline"></ion-icon>  Home</ion-button>
+
+      <ion-button color="danger" (click)="logOut('login')" class="logout-button"> <ion-icon name="log-out-outline"></ion-icon>  Log Out </ion-button>
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

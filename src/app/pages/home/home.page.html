@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home
+      <!-- <ion-icon name="home-outline"></ion-icon>  Home -->
+      <!-- <ion-button (click)="test()"></ion-button> -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content" [fullscreen]="true" *ngFor="let user of userDetails; let i = index">
+  
+  <ion-card class="ion-padding-card">
+    <ion-icon name="home-outline" id="main-icon"></ion-icon>
+    <h3 class="ion-text-center">{{ user.name }}</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label slot="start">Participant Code</ion-label>
+        <p slot="end">{{user.participant_code}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label slot="start">Address</ion-label>
+        <p slot="end">{{user.address}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let user of userDetails; let i = index">
+        <ion-card id="info-card" class="ion-padding">
+          <ion-label>
+            <strong>Name:</strong> {{ user.name }}
+          </ion-label><br>
+          <ion-label>
+            <strong>Participant Code:</strong> {{ user.participant_code }}
+          </ion-label><br>
+          <ion-label>
+            <strong>Address:</strong> {{ user.address }}
+          </ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+
+</ion-content>
