@@ -42,14 +42,23 @@
     </ion-card-content>
   </ion-card> -->
 
+  <!-- <ion-card *ngFor="let animal of aniDefects; let i = index" (click)="toggleCard(animal)" class="ion-padding">
+    <ion-card-header>
+      {{ animal.major_gene }}
+    </ion-card-header> -->
+    <!-- <ion-card-content *ngIf="aniDefects.expanded">
+      {{ animal.mg_description }}.
+    </ion-card-content> -->
+  <!-- </ion-card> -->
+
   <ion-card *ngFor="let animal of aniDefects; let i = index" (click)="toggleCard(animal)" class="ion-padding">
     <ion-card-header>
       {{ animal.major_gene }}
     </ion-card-header>
-    <!-- <ion-card-content *ngIf="aniDefects.expanded">
-      Here is more information about {{ animal.major_gene }}.
-    </ion-card-content> -->
-  </ion-card>
+    <ion-card-content *ngIf="animal.expanded">
+      {{ animal.mg_description }} 
+    </ion-card-content>
+</ion-card>
 
 
 

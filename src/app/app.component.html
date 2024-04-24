@@ -6,7 +6,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-accordion-group>
+      <!-- <ion-accordion-group>
         <ion-accordion value="first">
           <ion-item slot="header" color="light">
             <ion-label>Information</ion-label>
@@ -25,7 +25,22 @@
           </ion-item>
           <div class="ion-padding" slot="content" (click)="moveScreen('match')">Match</div>
         </ion-accordion>
-      </ion-accordion-group>
+      </ion-accordion-group> -->
+
+      <ion-button expand="full" color="light" (click)="moveScreen('information')" >
+        <!-- <ion-icon name="information-circle-outline"></ion-icon> -->
+        Information
+      </ion-button>
+      
+      <ion-button expand="full" color="light" (click)="moveScreen('input')">
+        <!-- <ion-icon name="input"></ion-icon> -->
+        Input
+      </ion-button>
+      
+      <ion-button expand="full" color="light" (click)="moveScreen('match')" >
+        <!-- <ion-icon name="checkmark-circle-outline"></ion-icon> -->
+        Match
+      </ion-button>
 
       <ion-button color="primary" (click)="moveScreen('home')" class="home-button"> <ion-icon name="home-outline"></ion-icon>  Home</ion-button>
 

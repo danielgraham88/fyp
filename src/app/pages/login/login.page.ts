@@ -33,6 +33,7 @@ export class LoginPage implements OnInit {
 
   async moveHome() {
 
+    
     this.loader = await this.loadingCtrl.create({
       spinner: 'crescent',
       message: 'Signing in...'
@@ -102,6 +103,9 @@ export class LoginPage implements OnInit {
 
   async logForm() {
 
+    let username = (document.getElementById('username') as HTMLInputElement).value
+    if (username === "D2690749"){
+
     this.loader = await this.loadingCtrl.create({
       spinner: 'crescent',
       message: 'Signing in...'
@@ -154,7 +158,18 @@ export class LoginPage implements OnInit {
         await alert.present();
       }
     });
-  }
 
+  }
+    else {
+      const alert = await this.alertController.create({
+        header: "Sign-In Failed",
+        subHeader: "Invalid Input",
+        message: "Please try again...",
+        buttons: ["OK"],
+      });
+    
+      await alert.present();
+    }
+  }
 
 }

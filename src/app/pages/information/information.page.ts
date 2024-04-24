@@ -55,11 +55,11 @@ export class InformationPage implements OnInit {
 
     this.loader.present();
 
-    this.apiAniDefects.getAniDefects().then(async(res: Array<AnimalDefects>) => {
-      this.aniDefects = res;
+    this.apiAniDefects.getAniDefects().then(async (res: Array<AnimalDefects>) => {
+      this.aniDefects = res.map(item => ({ ...item, expanded: false })); 
       console.log(this.aniDefects);
       this.loader.dismiss();
-    }).catch((error: any) =>{
+    }).catch((error: any) => {
       console.log(error);
       this.loader.dismiss();
     });
